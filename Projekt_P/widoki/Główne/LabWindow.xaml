@@ -1,0 +1,54 @@
+﻿<Window x:Class="Projekt_P.widoki.Główne.LabWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projekt_P.widoki.Główne"
+        mc:Ignorable="d"
+        Title="Wewnętrzny System Rezerwacji" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="1" Grid.Row="2" FontSize="20" Text="Dostępne badania:"/>
+        <DataGrid x:Name="GridLab"  AutoGenerateColumns="True" CanUserAddRows="False" Grid.Column="1" Grid.Row="2" Grid.RowSpan="2" Height="150" 
+                  Width="300"  Margin="60,35,10,10" ></DataGrid>
+        <TextBlock Grid.Column="1" Grid.Row="4" FontSize="20" Text="Umówione badania:"/>
+        <DataGrid x:Name="GridBadanie"  AutoGenerateColumns="True" CanUserAddRows="False" Grid.Column="1" Grid.Row="5" Grid.RowSpan="2" Height="150" 
+                  Width="300"  Margin="60,10,10,10"></DataGrid>
+        
+        <Label x:Name="labelUsunBadanie" Content="Id badania:" Grid.Column="2" Grid.Row="3" VerticalAlignment="Top" 
+               Margin="20,25,-10,0"></Label>
+        <TextBox x:Name="usunBadanieBox" Width="45" Grid.Column="2" Grid.Row="3" VerticalAlignment="Bottom" Margin="20,0,-20,40"/>
+
+        <Label x:Name="labelOdwolajBadanie" Content="Id badania:" Grid.Column="2" Grid.Row="6" VerticalAlignment="Top" 
+               Margin="20,10,-10,0"></Label>
+        <TextBox x:Name="odwolajBadanieBox" Width="45" Grid.Column="2" Grid.Row="6" VerticalAlignment="Bottom" Margin="20,0,-20,35"/>
+        <Button x:Name="dodajBadanie" Content="Dodaj badanie" Grid.Column="3" Grid.Row="2" Margin="25,0,5,0" Width="200" Height="70" Click="DodajBadanie_Click" />
+        <Button x:Name="usunBadanie" Content="Usuń badanie" Grid.Column="3" Grid.Row="3" Margin="25,0,5,20" Width="200" Height="70" Click="UsunBadanie_Click"/>
+        <Button x:Name="umowBadanie" Content="Umów badanie" Grid.Column="3" Grid.Row="5" Margin="25,0,5,10" Width="200" Height="70" Click="UmowBadanie_Click" />
+        <Button x:Name="odwolajBadanie" Content="Odwołaj badanie" Grid.Column="3" Grid.Row="6" Margin="25,0,5,10" Width="200" Height="70" Click="OdwolajBadanie_Click"/>
+        <Button x:Name="wroc" Content="Wróć" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="6" Width="50" Height="20" Click="Wroc_Click"/>
+       
+
+    </Grid>
+</Window>
